@@ -1,7 +1,12 @@
-angular.module('AngularBlog', ['ngRoute', 'ngResource', 'AngularBlog.controllers', 'AngluarBlog.factories'])
+angular.module('AngularBlog', ['ngRoute', 'ngResource', 'AngularBlog.controllers', 'AngularBlog.factories'])
 .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
-    $locationProvider.html5mode(true)
+    $locationProvider.html5Mode(true);
+    $routeProvider
     .when('/', {
+        templateUrl: 'views/main.html',
+        controller: 'PostsControl'
+    })
+    .when('/posts', {
         templateUrl: 'views/main.html',
         controller: 'PostsControl'
     })

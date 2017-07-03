@@ -1,0 +1,77 @@
+/* MAIN COLORS */
+.navyblue {
+    background: #2C3E50;
+}
+.orangered {
+    background: #E74C3C;
+}
+.offwhite {
+    background: #ECF0F1;
+}
+.lightblue {
+    background: #3498DB;
+}
+.solidblue {
+    background: #2980B9;
+}
+
+.flex {
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+
+.postbox {
+    flex-direction: column;
+    margin: 2em;
+}
+
+.postbox hr {
+    margin-bottom: 0;
+}
+
+.centered {
+    justify-content: center;
+}
+
+#page-wrapper {
+    flex-direction: column;
+}
+
+#header {
+    display: flex;
+    width: 100%;
+}
+
+#title-logo {
+    color: #ECF0F1;
+    font-size: 3.2em;
+    margin-left: 1em;
+    align-self: center;
+}
+
+#main-title {
+    color: #ECF0F1;
+    display: inline-block;
+    margin: 10px 10px;
+}
+
+#compose-button {
+    background-color: #E74C3C;
+    border-color: #ECF0F1;
+    align-self: center;
+    margin: 0;
+}
+
+#post-list {
+    list-style: none;
+}
+#posts {
+    display: absolute;
+    bottom: 20%;
+}
+
+
+

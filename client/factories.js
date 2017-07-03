@@ -1,6 +1,6 @@
-angular.module('AngularBlog.factories', [])
+angular.module('AngularBlog.factories', ['ngRoute', 'ngResource'])
 .factory('Post', ['$resource', function($resource) {
-    return $resource('/api/:id', { id: '@id' }, {
+    return $resource('/api/posts/:id', { id: '@id' }, {
         update: {
             method: 'PUT'
         }

@@ -1,13 +1,32 @@
 <!DOCTYPE html>
-<html ng-app "AngularBlog">
+<html ng-app="AngularBlog">
     <head> 
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/skeleton.css">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <base href='/'>
     </head>
-    <body ng-view>
+    <body>
+        <div class="flex" id="page-wrapper">
+            <div id="header" class="flex row"> 
+                <div id="titlebar" class="flex nine columns navyblue">
+                    <i id="title-logo" class="flex fa fa-hand-scissors-o" aria-hidden="true"></i>
+                    <h1 id="main-title">Blogular ///</h1>
+                </div>
+                <div id="composebar" class="flex three columns centered">
+                    <button id="compose-button" class="button-primary">/// Compose! ///</button>
+                </div>
+            </div>
+            <div id="posts" ng-view></div>
+        </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-route.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular-resource.js"></script>
         <script src="app.js"></script>
+        <script src="controllers.js"></script>
+        <script src="factories.js"></script>
     </body>
 </html>
