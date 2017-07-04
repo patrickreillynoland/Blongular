@@ -2,7 +2,7 @@ angular.module('AngularBlog.controllers', ['ngRoute', 'ngResource', 'AngularBlog
 .controller('PostsControl', ['$scope', '$routeParams', 'Post', function($scope, $routeParams, Post) {
     $scope.posts = Post.query();
 }])
-.controller('ComposeControl', ['$scope', 'Post', 'User', function($scope, Post, User) {
+.controller('ComposeControl', ['$scope', '$location', 'Post', 'User', function($scope, $location, Post, User) {
     getPosts();
 
     $scope.users = User.query();
@@ -31,7 +31,16 @@ angular.module('AngularBlog.controllers', ['ngRoute', 'ngResource', 'AngularBlog
         $scope.posts = Post.query();
     }
 }])
-.controller('SinglePostControl', ['$scope', '$routeParams', 'Post', function($scope, $routeParams, Post) {
-    $scope.posts = Post.get({ id : $routeParams.id });
+.controller('SinglePostControl', ['$scope', '$location', '$routeParams', 'Post', function($scope, $location, $routeParams, Post) {
+    $scope.post = Post.get({ id : $routeParams.id });
     
+     $scope.deletePost = function(id) {
+            if (confirm('You wanna delete?')) {
+                $scope.post.$delete(function () {
+                    $location.replace().path('/posts');
+                }, function (err) {
+                    console.log(err);
+                });
+            }
+        };
 }])

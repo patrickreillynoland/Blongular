@@ -1,18 +1,18 @@
 <div class="flex single-post">
     <div class="flex post-headline centered">
-        <h3>"{{ posts.title }}"</h3>
+        <h3>"{{ post.title }}"</h3>
     </div>
     <div class="inline-flex byline centered">
-        <h5>By: {{ posts.authorfirstname }} {{ posts.authorlastname }}</h5>
-        <h6>Filed under: {{ posts.categoryname }}</h6>
-        <h6>On {{ posts.createdAt | date: "MM/dd/yyyy h:mm a" }}</h6>
+        <h5>By: {{ post.authorfirstname }} {{ posts.authorlastname }}</h5>
+        <h6>Filed under: {{ post.categoryname }}</h6>
+        <h6>On {{ post.createdAt | date: "MM/dd/yyyy h:mm a" }}</h6>
         <hr />
     </div>
     <div class="flex content centered">
-        <p>{{ posts.content }}</p>
+        <p>{{ post.content }}</p>
     </div>
     <div class="flex column centered">
         <button class="orangered">/// Edit Blog ///</button>
-        <button class="orangered">/// Delete Blog ///</button>
+        <button class="orangered" ng-click="deletePost()">/// Delete Blog ///</button>
     </div>
 </div>
