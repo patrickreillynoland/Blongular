@@ -15,6 +15,8 @@
     background: #2980B9;
 }
 
+/* DISPLAY + POSITIONING*/
+
 .flex {
     display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
     display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
@@ -23,28 +25,60 @@
     display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
 }
 
-.postbox {
+.column {
     flex-direction: column;
-    margin: 2em;
-}
-
-.postbox hr {
-    margin-bottom: 0;
 }
 
 .centered {
     justify-content: center;
 }
 
+.flex-start {
+    justify-content: flex-start;
+}
+
+.flex-end {
+    justify-content: flex-end;
+}
+
+.inline-flex {
+    display: inline-flex;
+}
+
+.postbox {
+    margin: 2em;
+}
+
+.postbox hr {
+    margin-bottom: 0;
+    color: #ECF0F1;
+    width: 80%;
+}
+
+/* OTHER CLASSES */
+
 .single-post {
     width: 50%;
     display: inline-flex;
     float: left;
     flex-direction: column;
+    margin-top: 3em;
 }
 
+.read-more {
+    height: 5em;
+    width: 20%;
+    text-align: center;
+    color: #ECF0F1;
+}
+
+.byline {
+    flex-direction: column;
+    text-align: center;
+}
 #page-wrapper {
     flex-direction: column;
+    background-color: #3498DB;
 }
 
 #header {

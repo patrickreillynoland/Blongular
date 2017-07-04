@@ -14,11 +14,11 @@ angular.module('AngularBlog', ['ngRoute', 'ngResource', 'AngularBlog.controllers
         templateUrl: 'views/compose.html',
         controller: 'ComposeControl'
     })
-    .when('/:id/update', {
+    .when('/posts/:id/update', {
         templateUrl: 'views/update.html',
         controller: 'UpdatePostControl'
     })
-    .when('/:id', {
+    .when('/posts/:id', {
         templateUrl: 'views/single.html',
         controller: 'SinglePostControl'
     })

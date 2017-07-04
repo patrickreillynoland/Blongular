@@ -26,8 +26,8 @@ router.route('/')
 router.route('/:id')
     .get(function(req, res) {
         procedures.read(req.params.id)
-        .then(function(chirp) {
-            res.send(chirp);
+        .then(function(post) {
+            res.send(post);
         }).catch(function(err) {
             console.log(err);
             res.sendStatus(500);
