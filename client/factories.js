@@ -6,3 +6,14 @@ angular.module('AngularBlog.factories', ['ngRoute', 'ngResource'])
         }
     });
 }])
+.factory('User', ['$resource', function($resource) {
+    return $resource('/api/users/:id', { id: '@id' }, {
+    });
+}])
+.factory('Category', ['$resource', function($resource) {
+    return $resource('/api/category/:id', { id: '@id' }, {
+        update: {
+            method: 'PUT'
+        }
+    });
+}])

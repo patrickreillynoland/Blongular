@@ -67,15 +67,18 @@
 
 .read-more {
     height: 5em;
-    width: 20%;
+    width: 100%;
     text-align: center;
     color: #ECF0F1;
+    margin-top: 50%;
 }
 
 .byline {
     flex-direction: column;
     text-align: center;
 }
+
+/* HOME */
 #page-wrapper {
     flex-direction: column;
     background-color: #3498DB;
@@ -134,5 +137,17 @@
     bottom: 20%;
 }
 
+/*COMPOSE*/
 
+#entry-wrapper {
+    flex-direction: column;
+}
+
+#entry-inputs {
+    margin: 2em;
+}
+
+#new-content {
+    display: block;
+}
 

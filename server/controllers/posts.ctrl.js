@@ -14,7 +14,7 @@ router.route('/')
         });
     })
     .post(function(req, res) {
-        procedures.create(req.body.message, req.body.userid)
+        procedures.create(req.body.title, req.body.userid, req.body.categoryid, req.body.content)
         .then(function(id) {
             res.status(201).send(id);
         }, function(err) {
