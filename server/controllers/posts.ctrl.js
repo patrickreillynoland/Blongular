@@ -34,7 +34,7 @@ router.route('/:id')
         });
     })
     .put(function(req, res) {
-         procedures.update(req.params.id, req.body.message)
+         procedures.update(req.params.id, req.body.title, req.body.userid, req.body.categoryid, req.body.content)
             .then(function() {
                 res.sendStatus(204);
             }).catch(function(err) {

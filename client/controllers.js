@@ -2,10 +2,11 @@ angular.module('AngularBlog.controllers', ['ngRoute', 'ngResource', 'AngularBlog
 .controller('PostsControl', ['$scope', '$routeParams', 'Post', function($scope, $routeParams, Post) {
     $scope.posts = Post.query();
 }])
-.controller('ComposeControl', ['$scope', '$location', 'Post', 'User', function($scope, $location, Post, User) {
+.controller('ComposeControl', ['$scope', '$location', 'Post', 'User', 'Category', function($scope, $location, Post, User, Category) {
     getPosts();
 
     $scope.users = User.query();
+    $scope.categories = Category.query();
     
     $scope.createPost = function() {
         var payload = {
@@ -21,7 +22,7 @@ angular.module('AngularBlog.controllers', ['ngRoute', 'ngResource', 'AngularBlog
             $scope.newUserId = '';
             $scope.newCategoryId = '';
             $scope.content = '';
-            window.location.assign('localhost:3000');
+            $location.replace().path('/posts');
         }, function(err) {
             console.log(err);
         });
@@ -43,4 +44,19 @@ angular.module('AngularBlog.controllers', ['ngRoute', 'ngResource', 'AngularBlog
                 });
             }
         };
+}])
+.controller('UpdatePostControl', ['$scope', '$routeParams', '$location', 'Post', 'User', 'Category', function($scope, $routeParams, $location, Post, User, Category) {
+    $scope.users = User.query();
+    $scope.categories = Category.query();
+    
+    $scope.post = Post.get({ id: $routeParams.id });
+
+    $scope.updatePost = function() {
+        $scope.post.$update(function() {
+            alert('Post Updated');
+            $location.replace().path('/posts');
+        }, function(err) {
+            console.log(err);
+        });
+    }
 }])

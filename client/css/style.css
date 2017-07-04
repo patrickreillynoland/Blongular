@@ -41,6 +41,10 @@
     justify-content: flex-end;
 }
 
+.full-width {
+    width: 100%;
+}
+
 .inline-flex {
     display: inline-flex;
 }
@@ -54,6 +58,8 @@
     color: #ECF0F1;
     width: 80%;
 }
+
+
 
 /* OTHER CLASSES */
 

@@ -3,7 +3,7 @@
         <h3>"{{ post.title }}"</h3>
     </div>
     <div class="inline-flex byline centered">
-        <h5>By: {{ post.authorfirstname }} {{ posts.authorlastname }}</h5>
+        <h5>By: {{ post.authorfirstname }} {{ post.authorlastname }}</h5>
         <h6>Filed under: {{ post.categoryname }}</h6>
         <h6>On {{ post.createdAt | date: "MM/dd/yyyy h:mm a" }}</h6>
         <hr />
@@ -12,7 +12,9 @@
         <p>{{ post.content }}</p>
     </div>
     <div class="flex column centered">
-        <button class="orangered">/// Edit Blog ///</button>
+        <a ng-href="/posts/{{ post.id }}/update" style="text-decoration: none;">
+            <button class="orangered full-width">/// Edit Blog ///</button>
+        </a>
         <button class="orangered" ng-click="deletePost()">/// Delete Blog ///</button>
     </div>
 </div>

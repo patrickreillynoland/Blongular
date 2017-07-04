@@ -1,0 +1,26 @@
+<div id="entry-wrapper" class="flex six columns">
+    <div id="entry-inputs">
+        <div class="flex centered">
+            <input id="input" placeholder="New Title" ng-model="post.title">
+        </div>
+        <div class="flex centered">
+            <select id="user-dropdown" ng-model="post.userid">
+                <option value="">Select User:</option>
+                <option ng-repeat="u in users" value="{{ u.id }}">{{ u.firstname }} {{ u.lastname }}</option>
+            </select>
+        </div>
+        <div class="flex centered">
+            <select id="cat-dropdown" ng-model="post.categoryid">
+                <option value="">Category</option>
+                <option ng-repeat="c in categories" value="{{ c.id }}">{{ c.name }}</option>
+            </select>
+        </div>
+        <div class="flex centered">
+            <textarea rows="4" cols="50" id="new-content" ng-model="post.content"></textarea>
+        </div>
+        <div class="flex centered">
+            <button id="submit" class="button-primary" ng-click="updatePost()">/// Update Post ///</button>
+        </div>
+    </div>
+   
+</div>

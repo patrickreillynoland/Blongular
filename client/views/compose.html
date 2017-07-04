@@ -11,7 +11,8 @@
         </div>
         <div class="flex centered">
             <select id="cat-dropdown" ng-model="newCategoryId">
-                <option value="1">Category</option>
+                <option value="">Category</option>
+                <option ng-repeat="c in categories" value="{{ c.id }}">{{ c.name }}</option>
             </select>
         </div>
         <div class="flex centered">
