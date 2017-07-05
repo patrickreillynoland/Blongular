@@ -48,9 +48,18 @@ angular.module('AngularBlog.controllers', ['ngRoute', 'ngResource', 'AngularBlog
 .controller('UpdatePostControl', ['$scope', '$routeParams', '$location', 'Post', 'User', 'Category', function($scope, $routeParams, $location, Post, User, Category) {
     $scope.users = User.query();
     $scope.categories = Category.query();
-    
     $scope.post = Post.get({ id: $routeParams.id });
 
+    $scope.selectedUser = $scope.post.userid;
+    $scope.selectedCat = $scope.post.categoryid;
+
+    returnInfo();
+
+    function returnInfo() {
+        console.log($scope.post.userid);
+        console.log($scope.post.categoryid);
+    }
+    
     $scope.updatePost = function() {
         $scope.post.$update(function() {
             alert('Post Updated');

@@ -15,7 +15,7 @@
     background: #2980B9;
 }
 
-/* DISPLAY + POSITIONING*/
+/* DISPLAY + POSITIONING */
 
 .flex {
     display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
@@ -50,7 +50,7 @@
 }
 
 .postbox {
-    margin: 2em;
+    margin: 0 5em;
 }
 
 .postbox hr {
@@ -62,7 +62,6 @@
 
 
 /* OTHER CLASSES */
-
 .single-post {
     width: 50%;
     display: inline-flex;
@@ -72,13 +71,30 @@
 }
 
 .read-more {
+    border: 1px solid #ECF0F1;
     height: 5em;
     width: 100%;
     text-align: center;
     color: #ECF0F1;
     margin-top: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform, background-color;
+    transition-property: transform, background-color;
 }
 
+.read-more:hover, .read-more:focus, .read-more:active {
+    -webkit-transform: skew(-5deg);
+    transform: skew(-5deg);
+    border: 1px solid #fff;
+    color: #fff;
+    background-color: #ef6658;
+}
 .byline {
     flex-direction: column;
     text-align: center;
@@ -98,7 +114,7 @@
 #title-logo {
     color: #ECF0F1;
     font-size: 3.2em;
-    margin-left: 1em;
+    margin-left: .4em;
     align-self: center;
 }
 
@@ -130,8 +146,8 @@
 }
 
 #compose-button:hover, #compose-button:focus, #compose-button:active {
-  -webkit-transform: skew(-10deg);
-  transform: skew(-10deg);
+  -webkit-transform: skew(-5deg);
+  transform: skew(-5deg);
   background-color: #ef6658;
 }
 
@@ -143,8 +159,7 @@
     bottom: 20%;
 }
 
-/*COMPOSE*/
-
+/* COMPOSE */
 #entry-wrapper {
     flex-direction: column;
 }
@@ -157,3 +172,78 @@
     display: block;
 }
 
+.compose-button {
+    border: 1px solid #ECF0F1;
+    height: 5em;
+    width: 100%;
+    text-align: center;
+    color: #ECF0F1;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform, background-color;
+    transition-property: transform, background-color;
+}
+
+.compose-button:hover, .compose-button:focus, .compose-button:active {
+    -webkit-transform: skew(-5deg);
+    transform: skew(-5deg);
+    border: 1px solid #fff;
+    color: #fff;
+    background-color: #ef6658;
+
+/* SINGLE POST */
+.single-view-button {
+    border: 1px solid #ECF0F1;
+    height: 5em;
+    width: 100%;
+    text-align: center;
+    color: #ECF0F1;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform, background-color;
+    transition-property: transform, background-color;
+}
+
+.single-view-button:hover, .single-view-button:focus, .single-view-button:active {
+    -webkit-transform: skew(-5deg);
+    transform: skew(-5deg);
+    border: 1px solid #fff;
+    color: #fff;
+    background-color: #ef6658;
+}
+
+/* UPDATE */
+.update-button {
+    border: 1px solid #ECF0F1;
+    height: 5em;
+    width: 100%;
+    text-align: center;
+    color: #ECF0F1;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform, background-color;
+    transition-property: transform, background-color;
+}
+
+.update-button:hover, .update-button:focus, .update-button:active {
+    -webkit-transform: skew(-5deg);
+    transform: skew(-5deg);
+    border: 1px solid #fff;
+    color: #fff;
+    background-color: #ef6658;
+}
