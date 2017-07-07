@@ -8,6 +8,8 @@ var pool = mysql.createPool({
     database: 'AngularBlog'
 });
 
+exports.pool = pool;
+
 exports.rows = function (procedureName, args) {
     return callProcedure(procedureName, args)
         .then(function(sets) {

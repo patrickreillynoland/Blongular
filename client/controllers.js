@@ -59,7 +59,7 @@ angular.module('AngularBlog.controllers', ['ngRoute', 'ngResource', 'AngularBlog
         console.log($scope.post.userid);
         console.log($scope.post.categoryid);
     }
-    
+
     $scope.updatePost = function() {
         $scope.post.$update(function() {
             alert('Post Updated');
@@ -69,3 +69,26 @@ angular.module('AngularBlog.controllers', ['ngRoute', 'ngResource', 'AngularBlog
         });
     }
 }])
+.controller('UserListControl', ['$scope', 'User', 'UserService', function($scope, User, UserService) {
+        UserService.requireLogin();
+        $scope.users = User.query();
+    }])
+.controller('LoginControl', ['$scope', '$location', 'UserService', function ($scope, $location, UserService) {
+        UserService.me().then(function(success) {
+            redirect();
+        });
+        function redirect() {
+            var dest = $location.search().dest;
+            if (!dest) { dest = '/'; }
+            $location.replace().path(dest).search('dest', null);
+        }
+        
+        $scope.login = function() {
+            UserService.login($scope.email, $scope.password)
+            .then(function () {
+                redirect();
+            }, function (err) {
+                console.log(err);
+            });
+        }
+    }]);

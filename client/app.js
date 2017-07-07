@@ -1,4 +1,4 @@
-angular.module('AngularBlog', ['ngRoute', 'ngResource', 'AngularBlog.controllers', 'AngularBlog.factories'])
+angular.module('AngularBlog', ['ngRoute', 'ngResource', 'AngularBlog.controllers', 'AngularBlog.factories', 'AngularBlog.directives', 'AngularBlog.services'])
 .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
     $routeProvider
@@ -9,6 +9,14 @@ angular.module('AngularBlog', ['ngRoute', 'ngResource', 'AngularBlog.controllers
     .when('/posts', {
         templateUrl: 'views/main.html',
         controller: 'PostsControl'
+    })
+    .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginControl'
+    })
+    .when('/users', {
+        templateUrl: 'views/user_list.html',
+        controller: 'UserListControl'
     })
     .when('/compose', {
         templateUrl: 'views/compose.html',

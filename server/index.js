@@ -28,7 +28,7 @@ app.get('*', function(req, res, next) {
     if (isAsset(req.url)) {
         return next(); //Call the next route handler
     } else {
-        res.sendFile('../client/index.html');
+        res.sendFile(clientPath + '/index.html');
     }
 });
 
